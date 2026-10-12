@@ -4,126 +4,373 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Arkadeep Das | Portfolio</title>
-  <meta name="description" content="Portfolio of Arkadeep Das, finance and data science student at Rutgers Business School.">
+  <meta name="description" content="Portfolio of Arkadeep Das, a finance and data science student at Rutgers Business School focused on markets, valuation, and data-driven decision-making.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #faf8f5;
       --surface: #ffffff;
+      --surface-soft: #f4f0ea;
       --text: #1c1b19;
       --muted: #6b675f;
       --line: #e6e1d8;
       --accent: #1f4d3a;
       --accent-soft: #e4efe9;
+      --shadow: rgba(18, 23, 20, 0.08);
     }
+
     @media (prefers-color-scheme: dark) {
       :root {
         --bg: #131614;
         --surface: #1b1f1c;
+        --surface-soft: #1c2321;
         --text: #efece6;
         --muted: #9b978d;
         --line: #2a2f2b;
         --accent: #7fc4a2;
         --accent-soft: #1f2e26;
+        --shadow: rgba(0, 0, 0, 0.18);
       }
     }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
+
     body {
       background: var(--bg);
       color: var(--text);
       font-family: 'Inter', system-ui, sans-serif;
       line-height: 1.65;
       -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
-    a { color: inherit; text-decoration: none; }
-    .wrap { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .wrap {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 8px;
+    }
 
     /* Nav */
-    nav { padding: 28px 0; }
-    nav .wrap { display: flex; justify-content: space-between; align-items: center; }
-    .logo { font-family: 'Fraunces', serif; font-size: 1.2rem; font-weight: 600; }
-    nav ul { display: flex; gap: 28px; list-style: none; font-size: 0.92rem; color: var(--muted); }
-    nav ul a:hover { color: var(--accent); }
+    nav {
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(12px);
+      background: rgba(250, 248, 245, 0.7);
+      border-bottom: 1px solid var(--line);
+      z-index: 50;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      nav {
+        background: rgba(19, 22, 20, 0.72);
+      }
+    }
+
+    nav .wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 72px;
+    }
+
+    .logo {
+      font-family: 'Fraunces', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    nav ul a {
+      transition: color 0.2s ease;
+    }
+
+    nav ul a:hover {
+      color: var(--accent);
+    }
 
     /* Hero */
-    .hero { padding: 90px 0 70px; }
+    .hero {
+      padding: 90px 0 70px;
+    }
+
     .eyebrow {
       display: inline-block;
-      font-size: 0.8rem; font-weight: 500;
-      letter-spacing: 0.08em; text-transform: uppercase;
-      color: var(--accent); background: var(--accent-soft);
-      padding: 6px 14px; border-radius: 999px; margin-bottom: 26px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-soft);
+      padding: 7px 14px;
+      border-radius: 999px;
+      margin-bottom: 26px;
     }
+
     h1 {
       font-family: 'Fraunces', serif;
       font-weight: 400;
-      font-size: clamp(2.4rem, 6vw, 3.8rem);
-      line-height: 1.1; letter-spacing: -0.02em;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
       margin-bottom: 22px;
+      max-width: 700px;
     }
-    h1 em { font-style: italic; color: var(--accent); }
-    .hero p { max-width: 560px; color: var(--muted); font-size: 1.1rem; }
-    .btns { margin-top: 36px; display: flex; gap: 14px; flex-wrap: wrap; }
+
+    h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .hero p {
+      max-width: 620px;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .btns {
+      margin-top: 36px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
     .btn {
-      padding: 12px 24px; border-radius: 10px;
-      font-weight: 500; font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 22px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.95rem;
       border: 1px solid var(--line);
-      transition: transform .2s, background .2s;
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
     }
-    .btn:hover { transform: translateY(-2px); }
-    .btn.primary { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn.primary {
+      background: var(--accent);
+      color: var(--bg);
+      border-color: var(--accent);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 42px;
+      max-width: 700px;
+    }
+
+    .stat {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px 16px;
+      box-shadow: 0 8px 24px var(--shadow);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
 
     /* Sections */
-    section { padding: 60px 0; border-top: 1px solid var(--line); }
+    section {
+      padding: 62px 0;
+      border-top: 1px solid var(--line);
+    }
+
     h2 {
-      font-family: 'Fraunces', serif; font-weight: 400;
-      font-size: 1.9rem; margin-bottom: 30px; letter-spacing: -0.01em;
+      font-family: 'Fraunces', serif;
+      font-weight: 400;
+      font-size: 2rem;
+      margin-bottom: 28px;
+      letter-spacing: -0.02em;
     }
 
     /* Projects */
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 22px;
+    }
+
     .card {
       background: var(--surface);
       border: 1px solid var(--line);
-      border-radius: 16px; padding: 26px;
-      transition: transform .25s, box-shadow .25s, border-color .25s;
+      border-radius: 18px;
+      padding: 26px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      box-shadow: 0 8px 24px var(--shadow);
     }
-    .card:hover { transform: translateY(-4px); border-color: var(--accent); box-shadow: 0 12px 30px rgba(0,0,0,.07); }
-    .card .tag { font-size: 0.75rem; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); font-weight: 600; }
-    .card h3 { font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.25rem; margin: 10px 0; }
-    .card p { color: var(--muted); font-size: 0.93rem; }
-    .card .link { display: inline-block; margin-top: 16px; font-size: 0.9rem; font-weight: 500; color: var(--accent); }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+      box-shadow: 0 14px 34px var(--shadow);
+    }
+
+    .card .tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .card h3 {
+      font-family: 'Fraunces', serif;
+      font-weight: 600;
+      font-size: 1.28rem;
+      margin: 10px 0 12px;
+      letter-spacing: -0.02em;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .card .link {
+      display: inline-block;
+      margin-top: 18px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
 
     /* About / Skills */
-    .about { display: grid; grid-template-columns: 1.4fr 1fr; gap: 50px; }
-    .about p { color: var(--muted); margin-bottom: 16px; }
-    .skills { display: flex; flex-wrap: wrap; gap: 10px; align-content: flex-start; }
+    .about {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 50px;
+    }
+
+    .about p {
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-content: flex-start;
+    }
+
     .skills span {
-      background: var(--surface); border: 1px solid var(--line);
-      padding: 7px 16px; border-radius: 999px; font-size: 0.88rem;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      color: var(--text);
     }
 
     /* Contact */
-    .contact { text-align: center; }
-    .contact p { color: var(--muted); margin-bottom: 28px; }
+    .contact {
+      text-align: center;
+    }
 
-    footer { padding: 36px 0; text-align: center; font-size: 0.85rem; color: var(--muted); border-top: 1px solid var(--line); }
+    .contact p {
+      color: var(--muted);
+      margin-bottom: 28px;
+      max-width: 650px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    footer {
+      padding: 36px 0 44px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+    }
+
+    @media (max-width: 760px) {
+      .about {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+    }
 
     @media (max-width: 680px) {
-      .about { grid-template-columns: 1fr; gap: 30px; }
-      nav ul { gap: 18px; }
-      .hero { padding: 60px 0 50px; }
+      nav .wrap {
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 14px;
+        padding-bottom: 14px;
+        gap: 12px;
+      }
+
+      nav ul {
+        gap: 18px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero {
+        padding: 68px 0 52px;
+      }
+
+      .btns {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body>
-
-  <nav>
+  <nav aria-label="Main navigation">
     <div class="wrap">
-      <a href="#" class="logo">Arkadeep Das</a>
+      <a href="#top" class="logo">Arkadeep Das</a>
       <ul>
         <li><a href="#work">Work</a></li>
         <li><a href="#about">About</a></li>
@@ -132,44 +379,71 @@
     </div>
   </nav>
 
-  <header class="hero">
+  <header class="hero" id="top">
     <div class="wrap">
       <span class="eyebrow">Rutgers Business School</span>
-      <h1>Finance meets <em>data</em>, with a focus on financial markets.</h1>
-      <p>I'm a finance student pursuing a double major in Data Science, building towards a career in investment banking or asset management.</p>
+      <h1>Finance meets <em>data</em> to drive smarter decisions.</h1>
+      <p>
+        I’m a finance and data science student at Rutgers, focused on financial markets, valuation,
+        and research-driven investing.
+      </p>
+
       <div class="btns">
         <a href="#work" class="btn primary">View my work</a>
-        <a href="https://linkedin.com/in/arkadeepdas423" class="btn" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://linkedin.com/in/arkadeepdas423" class="btn" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="mailto:arkadeepdasims@gmail.com" class="btn">Email me</a>
+      </div>
+
+      <div class="stats" aria-label="Quick profile summary">
+        <div class="stat">
+          <strong>Finance + Data Science</strong>
+          <span>Student at Rutgers</span>
+        </div>
+        <div class="stat">
+          <strong>Markets</strong>
+          <span>Equity research & valuation</span>
+        </div>
+        <div class="stat">
+          <strong>Open to</strong>
+          <span>Internships & projects</span>
+        </div>
       </div>
     </div>
   </header>
 
   <section id="work">
     <div class="wrap">
-      <h2>Projects</h2>
+      <h2>Selected work</h2>
       <div class="grid">
-
         <article class="card">
           <span class="tag">Equity Research</span>
-          <h3>Applovin (APP)</h3>
-          <p>Full equity research pitch covering the business, valuation, and investment thesis of Applovin. Replace this with a short summary of your key findings.</p>
-          <a href="https://rutgersconnect-my.sharepoint.com/:p:/g/personal/dhl74_scarletmail_rutgers_edu/IQBHmOv8mDEjRqKK-2uV-jTpAbB0ZRrGwPgudII6lEBRrwg?e=tfmEJZ" class = "btn" target = "_blank" rel = "noopener">View report →</a>
+          <h3>AppLovin (APP)</h3>
+          <p>
+            Built an investment pitch covering the business model, growth drivers, valuation,
+            and key risks behind AppLovin’s position in digital advertising.
+          </p>
+          <a href="https://rutgersconnect-my.sharepoint.com/:p:/g/personal/dhl74_scarletmail_rutgers_edu/IQBHmOv8mDEjRqKK-2uV-jTpAbB0ZRrGwPgudII6lEBRrwg?e=tfmEJZ" class="link" target="_blank" rel="noopener noreferrer">Read the pitch →</a>
         </article>
 
         <article class="card">
           <span class="tag">Data Science</span>
-          <h3>Project Title</h3>
-          <p>One or two sentences on the problem, your method, and the result.</p>
-          <a href="#" class="link">View on GitHub →</a>
+          <h3>Financial Data Analysis</h3>
+          <p>
+            Explored market and firm-level data to identify patterns, build analytical insights,
+            and communicate results through clear visual storytelling.
+          </p>
+          <a href="https://github.com/SunkistOrca3" class="link" target="_blank" rel="noopener noreferrer">See more on GitHub →</a>
         </article>
 
         <article class="card">
           <span class="tag">Valuation</span>
           <h3>Lululemon Pitch Deck</h3>
-          <p>Describe a DCF, comps analysis, or financial model you built.</p>
-          <a href="https://rutgersconnect-my.sharepoint.com/:p:/r/personal/asl174_scarletmail_rutgers_edu/Documents/Lululemon%20Pitch%20Deck.pptx?d=w70ece862239b444e92eb80614bb8025e&csf=1&web=1&e=xjsvPo" class = "btn" target = "_blank" rel = "noopener">View project →</a>
+          <p>
+            Developed a valuation-focused presentation using DCF, comparables, and business
+            analysis to evaluate Lululemon’s long-term growth profile.
+          </p>
+          <a href="https://rutgersconnect-my.sharepoint.com/:p:/r/personal/asl174_scarletmail_rutgers_edu/Documents/Lululemon%20Pitch%20Deck.pptx?d=w70ece862239b444e92eb80614bb8025e&csf=1&web=1&e=xjsv7I" class="link" target="_blank" rel="noopener noreferrer">View the deck →</a>
         </article>
-
       </div>
     </div>
   </section>
@@ -178,19 +452,29 @@
     <div class="wrap about">
       <div>
         <h2>About</h2>
-        <p>I'm a sophomore at Rutgers Business School studying finance, with a double major in Data Science. I'm interested in how different deals are structured, such as the Space X and Paramount deal in terms of debt and equity used.</p>
-        <p>Outside the classroom, I'm active in finance and data science organizations on campus, including being a part of TAMID, BITS, and AI Club, and always looking for new projects to work on and learn from.</p>
+        <p>
+          I’m a sophomore at Rutgers Business School studying finance, with a double major in Data Science.
+          I’m especially interested in how markets work, how firms are valued, and how data can improve
+          decision-making in investing and business strategy.
+        </p>
+        <p>
+          Outside the classroom, I’m involved in campus finance and data organizations, including TAMID,
+          BITS, and AI Club. I enjoy working on projects that combine business judgment with analytical
+          thinking and am always looking for opportunities to learn more.
+        </p>
       </div>
+
       <div>
         <h2>Toolkit</h2>
-        <div class="skills">
+        <div class="skills" aria-label="Skills and tools">
           <span>Financial Modeling</span>
           <span>Valuation</span>
           <span>Excel</span>
           <span>Python</span>
           <span>Data Analysis</span>
           <span>Equity Research</span>
-          <span>AI Skills</span>
+          <span>PowerPoint</span>
+          <span>SQL</span>
         </div>
       </div>
     </div>
@@ -198,11 +482,11 @@
 
   <section id="contact">
     <div class="wrap contact">
-      <h2>If you're also into financial markets, AI, and marketing, let's connect</h2>
-      <p>Open to internships, projects, and conversations about markets.</p>
+      <h2>If you're also into financial markets, AI, and business strategy, let's connect.</h2>
+      <p>Open to internships, projects, and conversations about markets, learning, and growth.</p>
       <div class="btns" style="justify-content:center;">
         <a href="mailto:arkadeepdasims@gmail.com" class="btn primary">Email me</a>
-        <a href="https://linkedin.com/in/arkadeepdas423" class="btn" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://linkedin.com/in/arkadeepdas423" class="btn" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       </div>
     </div>
   </section>
@@ -210,6 +494,5 @@
   <footer>
     <div class="wrap">© 2026 Arkadeep Das</div>
   </footer>
-
 </body>
 </html>
