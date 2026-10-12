@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Arkadeep Das | Portfolio</title>
-  <meta name="description" content="Portfolio of Arkadeep Das, a sophomore studying finance and data science student at Rutgers Business School focused on exploring markets, valuating companies, AI automation, and data-driven decision-making.">
+  <meta name="description" content="Portfolio of Arkadeep Das, a finance and data science student at Rutgers Business School focused on markets, valuation, and data-driven decision-making.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -280,8 +280,27 @@
     /* About / Skills */
     .about {
       display: grid;
-      grid-template-columns: 1.5fr 1fr;
+      grid-template-columns: 1.2fr 1.3fr 1fr;
       gap: 50px;
+      align-items: start;
+    }
+
+    .about-headshot {
+      order: -1;
+    }
+
+    .headshot-container {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 12px 40px var(--shadow);
+    }
+
+    .headshot-container img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
 
     .about p {
@@ -324,6 +343,17 @@
       font-size: 0.85rem;
       color: var(--muted);
       border-top: 1px solid var(--line);
+    }
+
+    @media (max-width: 960px) {
+      .about {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+      }
+
+      .about-headshot {
+        order: 0;
+      }
     }
 
     @media (max-width: 760px) {
@@ -384,7 +414,7 @@
       <span class="eyebrow">Rutgers Business School</span>
       <h1>Finance meets <em>data</em> to drive smarter decisions.</h1>
       <p>
-        I’m a finance and data science student at Rutgers, focused on financial markets, valuation,
+        I'm a finance and data science student at Rutgers, focused on financial markets, valuation,
         and research-driven investing.
       </p>
 
@@ -420,7 +450,7 @@
           <h3>AppLovin (APP)</h3>
           <p>
             Built an investment pitch covering the business model, growth drivers, valuation,
-            and key risks behind AppLovin’s position in digital advertising.
+            and key risks behind AppLovin's position in digital advertising.
           </p>
           <a href="https://rutgersconnect-my.sharepoint.com/:p:/g/personal/dhl74_scarletmail_rutgers_edu/IQBHmOv8mDEjRqKK-2uV-jTpAbB0ZRrGwPgudII6lEBRrwg?e=tfmEJZ" class="link" target="_blank" rel="noopener noreferrer">Read the pitch →</a>
         </article>
@@ -440,7 +470,7 @@
           <h3>Lululemon Pitch Deck</h3>
           <p>
             Developed a valuation-focused presentation using DCF, comparables, and business
-            analysis to evaluate Lululemon’s long-term growth profile.
+            analysis to evaluate Lululemon's long-term growth profile.
           </p>
           <a href="https://rutgersconnect-my.sharepoint.com/:p:/r/personal/asl174_scarletmail_rutgers_edu/Documents/Lululemon%20Pitch%20Deck.pptx?d=w70ece862239b444e92eb80614bb8025e&csf=1&web=1&e=xjsv7I" class="link" target="_blank" rel="noopener noreferrer">View the deck →</a>
         </article>
@@ -450,15 +480,21 @@
 
   <section id="about">
     <div class="wrap about">
+      <div class="about-headshot">
+        <div class="headshot-container">
+          <img src="headshot.jpg" alt="Arkadeep Das headshot" loading="lazy">
+        </div>
+      </div>
+
       <div>
         <h2>About</h2>
         <p>
-          I’m a sophomore at Rutgers Business School studying finance, with a double major in Data Science.
-          I’m especially interested in how markets work, how firms are valued, and how data can improve
+          I'm a sophomore at Rutgers Business School studying finance, with a double major in Data Science.
+          I'm especially interested in how markets work, how firms are valued, and how data can improve
           decision-making in investing and business strategy.
         </p>
         <p>
-          Outside the classroom, I’m involved in campus finance and data organizations, including TAMID,
+          Outside the classroom, I'm involved in campus finance and data organizations, including TAMID,
           BITS, and AI Club. I enjoy working on projects that combine business judgment with analytical
           thinking and am always looking for opportunities to learn more.
         </p>
